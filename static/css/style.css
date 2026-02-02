@@ -1,0 +1,152 @@
+/* =====================
+   GLOBAL RESET
+   ===================== */
+html,
+body {
+    height: 100%;
+}
+
+/* =====================
+   DEFAULT (LOGIN PAGE ONLY)
+   ===================== */
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(180deg, #0b1f24, #08181c);
+    color: #e6f2f0;
+}
+
+/* =====================
+   LIGHT PAGES (HOME / DASHBOARD / INVENTORY)
+   ===================== */
+body.light-page {
+    background: #ecfff4;
+    /* SOLID white-green */
+    color: #0f3d2e;
+    min-height: 100vh;
+}
+
+/* Selected brand highlight */
+.brand-card.selected {
+    background: #dcfce7;
+    border-color: #07441e;
+    box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.4);
+}
+
+/* =====================
+   NAVBAR
+   ===================== */
+.mall-nav {
+    background: #0f5132;
+    height: 56px;
+}
+
+.mall-brand {
+    color: #ecfdf5;
+    font-weight: 700;
+    font-size: 27px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.mall-brand i {
+    font-size: 35px;
+}
+
+.mall-link {
+    color: #d1fae5;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.mall-link:hover {
+    color: #a7f3d0;
+}
+
+/* =====================
+   PAGE CONTAINER
+   ===================== */
+.mall-container {
+    padding: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* =====================
+   TITLES
+   ===================== */
+.page-title {
+    color: #0f5132;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+/* =====================
+   DASHBOARD BRAND GRID
+   ===================== */
+.brand-grid-2col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+/* =====================
+   BRAND CARDS
+   ===================== */
+.brand-card {
+    background: #ffffff;
+    border: 2px solid #22c55e;
+    border-radius: 14px;
+    padding: 26px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #166534;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.brand-card:hover {
+    background: #ecfdf5;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(34, 197, 94, 0.3);
+}
+
+/* =====================
+   BUTTONS
+   ===================== */
+.btn-success {
+    background-color: #22c55e;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #16a34a;
+}
+
+.btn-outline-light {
+    color: #166534;
+    border-color: #22c55e;
+}
+
+.btn-outline-light:hover {
+    background: #22c55e;
+    color: #ffffff;
+}
+
+/* =====================
+   EMPTY PAGE (INVENTORY)
+   ===================== */
+.empty {
+    text-align: left;
+    padding-top: 40px;
+}
+
+/* =====================
+   LOGIN BOX (UNCHANGED)
+   ===================== */
+.login-box {
+    background: #06161a;
+    color: #e6f2f0;
+}
