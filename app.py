@@ -10,6 +10,8 @@ client = MongoClient(config.MONGO_URI)
 db = client[config.DB_NAME]
 users_col = db["users"]
 inventory_col = db["inventory"]
+sales_col = db["sales"]
+
 
 # ---------- LOGIN ----------
 @app.route("/", methods=["GET", "POST"])
@@ -89,6 +91,49 @@ def inventory():
         brand=brand,
         items=items
     )
+
+# ---------- SALES ----------
+@app.route("/sales")
+def sales():
+    if "user" not in session:
+        return redirect("/")
+
+    brand = request.args.get("brand")
+
+    brand_prefix = {
+        "NIKE": "^NK",
+        "PUMA": "^PU",
+        "ADIDAS": "^AD",
+        "REEBOK": "^RB",
+        "LOTTO": "^LO",
+        "NIVIA": "^NV",
+        "CAMPUS": "^CP",
+        "REDTAPE": "^RT",
+        "LIFELONG": "^LL",
+        "JASPO": "^JS"
+    }
+
+    query = {}
+
+    if brand and brand in brand_prefix:
+        prefix = brand_prefix[brand]
+
+        query = {
+            "$or": [
+                {"ID": {"$regex": prefix}},
+                {"Product ID": {"$regex": prefix}}
+            ]
+        }
+
+    items = list(sales_col.find(query, {"_id": 0}))
+
+    return render_template(
+        "sales.html",
+        user=session["user"],
+        items=items,
+        selected_brand=brand
+    )
+
 
 # ---------- LOGOUT ----------
 @app.route("/logout")
