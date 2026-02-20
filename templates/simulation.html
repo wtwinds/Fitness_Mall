@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simulation</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body class="light-page">
+
+    {% include "navbar.html" %}
+
+    <div class="mall-container">
+
+        <!-- PAGE TITLE -->
+        <h4 class="page-title">
+            <i class="bi bi-cpu-fill me-2"></i> AI Revenue Simulation
+        </h4>
+
+        <!-- FILTER + SEARCH -->
+        <form method="GET" action="/simulation" class="mb-4 d-flex gap-2">
+
+            <!-- BRAND FILTER -->
+            <!-- <select name="brand" class="form-select w-25">
+                <option value="">All Brands</option>
+                {% for b in ["NIKE","PUMA","ADIDAS","REEBOK","LOTTO","NIVIA","CAMPUS","REDTAPE","LIFELONG","JASPO"] %}
+                <option value="{{b}}" {{ 'selected' if selected_brand==b else '' }}>{{b}}</option>
+                {% endfor %}
+            </select> -->
+
+            <!-- PRODUCT SEARCH -->
+            <input type="text" name="pid" placeholder="Search Product ID..." value="{{ pid_search or '' }}"
+                class="form-control w-25">
+
+            <button type="submit" class="btn btn-success">
+                <i class="bi bi-search"></i> Search
+            </button>
+        </form>
+
+        <!-- TABLE -->
+        {% if items and items|length > 0 %}
+        <div style="max-height:500px; overflow-y:auto;">
+            <table class="table table-bordered table-hover shadow-sm">
+                <thead class="table-success sticky-top">
+                    <tr>
+                        <th>Date</th>
+                        <th>Product ID</th>
+                        <th>Month</th>
+                        <th>Base Revenue</th>
+                        <th>Season Factor</th>
+                        <th>Final Revenue</th>
+                        <th>Margin %</th>
+                        <th>Profit</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for item in items %}
+                    <tr>
+                        <td>{{ item["Date"] }}</td>
+                        <td class="fw-semibold">{{ item["Product ID"] }}</td>
+                        <td>{{ item["Month"] }}</td>
+                        <td>{{ item["Base Revenue"] }}</td>
+                        <td>{{ item["Seasonal Factor"] }}</td>
+                        <td>{{ item["Final Revenue"] }}</td>
+                        <td>{{ item["Profit Margin"] }}</td>
+                        <td class="fw-bold text-success">{{ item["Profit"] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        {% else %}
+        <div class="alert alert-info mt-4 shadow-sm">
+            <i class="bi bi-info-circle me-2"></i>
+            No simulation data found. Try another brand or Product ID.
+        </div>
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>

@@ -150,3 +150,8 @@ body.light-page {
     background: #06161a;
     color: #e6f2f0;
 }
+
+/* Bigger table pages */
+.wide-container {
+    max-width: 1400px;
+}

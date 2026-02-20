@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Simulation</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body class="light-page">
+
+    {% include "navbar.html" %}
+
+    <div class="mall-container">
+
+        <h3 class="page-title">
+            <i class="bi bi-grid-fill me-2"></i> Brand Simulation
+        </h3>
+
+        <!-- SAME DASHBOARD GRID -->
+        <div class="brand-grid-2col">
+
+            {% for b in ["NIKE","PUMA","ADIDAS","REEBOK","LOTTO","NIVIA","CAMPUS","REDTAPE","LIFELONG","JASPO"] %}
+
+            <a href="/brand/{{b}}" class="text-decoration-none">
+                <div class="brand-card">
+                    {{b}}
+                </div>
+            </a>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
