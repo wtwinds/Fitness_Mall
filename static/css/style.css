@@ -38,7 +38,16 @@ body.light-page {
    ===================== */
 .mall-nav {
     background: #0f5132;
-    height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+}
+
+/* NAV CENTER ALIGN */
+.nav-menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 
 .mall-brand {
@@ -154,4 +163,82 @@ body.light-page {
 /* Bigger table pages */
 .wide-container {
     max-width: 1400px;
+}
+
+/* =====================
+   SIMULATION HOME BUTTONS
+   ===================== */
+
+/* Big center buttons */
+.sim-btn {
+    width: 420px;
+    font-size: 30px;
+    font-weight: 700;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    /* smooth hover */
+}
+
+.sim-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Report button bottom-right */
+.sim-report-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+/* =====================
+   MOBILE NAVBAR FIX
+   ===================== */
+@media (max-width: 768px) {
+
+    .mall-nav {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px 12px;
+    }
+
+    /* SHOW toggle */
+    .nav-toggle {
+        display: block;
+    }
+
+    /* Hide menu default */
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #0f5132;
+        margin-top: 8px;
+        padding: 8px 10px;
+        border-radius: 8px;
+    }
+
+    /* Toggle active */
+    .nav-menu.show-menu {
+        display: flex;
+    }
+
+    /* Links spacing */
+    .mall-link {
+        padding: 8px 4px;
+        font-size: 15px;
+    }
+
+    /* Right user row */
+    .nav-right {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 6px;
+    }
+
+    /* Brand smaller */
+    .mall-brand {
+        font-size: 18px;
+    }
 }

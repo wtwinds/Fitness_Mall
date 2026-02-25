@@ -54,6 +54,13 @@ def select_brand(brand):
     session["brand"] = brand
     return redirect("/dashboard")
 
+# -------- SIMULATION LANDING PAGE --------
+@app.route("/simulation")
+def simulation_home():
+    if "user" not in session:
+        return redirect("/")
+    return render_template("simulation_home.html", user=session["user"])
+
 # ---------- INVENTORY ----------
 @app.route("/inventory")
 def inventory():
@@ -138,8 +145,8 @@ def sales():
     )
 
 #-----------Simulation----------
-@app.route("/simulation")
-def simulation():
+@app.route("/short-summary")
+def short_summary():
     if "user" not in session:
         return redirect("/")
 
@@ -203,7 +210,7 @@ def simulation():
         items.append(item)
 
     return render_template(
-        "simulation.html",
+        "short_summary.html",
         user=session["user"],
         items=items,
         selected_brand=brand,

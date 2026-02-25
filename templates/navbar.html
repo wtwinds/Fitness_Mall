@@ -17,19 +17,24 @@
 </head>
 
 <body>
+    <nav class="navbar mall-nav px-3">
 
-    <nav class="navbar mall-nav px-4">
-        <!-- Brand -->
-        <a href="/home" class="mall-brand text-decoration-none">
-            <i class="bi bi-activity me-1"></i> Fitness Freaks Mall
-        </a>
+        <!-- LEFT: BRAND + TOGGLE -->
+        <div class="d-flex align-items-center gap-2">
 
+            <!-- MOBILE TOGGLE -->
+            <!-- <button class="nav-toggle d-md-none" onclick="toggleMenu()">
+                <i class="bi bi-list"></i>
+            </button> -->
 
-        <!-- Menu -->
-        <div class="d-flex gap-3 ms-4">
-            <!-- <a href="/dashboard" class="mall-link">
-                <i class="bi bi-grid me-1"></i> Dashboard
-            </a> -->
+            <!-- BRAND -->
+            <a href="/home" class="mall-brand text-decoration-none">
+                <i class="bi bi-activity me-1"></i> Fitness Freaks Mall
+            </a>
+        </div>
+
+        <!-- CENTER MENU -->
+        <div class="nav-menu mx-auto d-flex align-items-center" id="navMenu">
             <a href="/inventory" class="mall-link">
                 <i class="bi bi-box-seam me-1"></i> Inventory
             </a>
@@ -41,21 +46,27 @@
             <a href="/simulation" class="mall-link">
                 <i class="bi bi-cpu me-1"></i> Simulation
             </a>
-
         </div>
 
-        <!-- Right Side -->
-        <div class="ms-auto d-flex align-items-center gap-3">
+        <!-- RIGHT USER -->
+        <div class="nav-right">
             <span class="text-white fw-semibold">
                 <i class="bi bi-person-circle me-1"></i> {{ user }}
             </span>
 
             <a href="/logout" class="btn btn-outline-danger btn-sm">
-                <i class="bi bi-box-arrow-right"></i>
+                Logout
             </a>
         </div>
+
     </nav>
 
+    <!-- TOGGLE SCRIPT -->
+    <!-- <script>
+        function toggleMenu() {
+            document.getElementById("navMenu").classList.toggle("show-menu");
+        }
+    </script> -->
 </body>
 
 </html>

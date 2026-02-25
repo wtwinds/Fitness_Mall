@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simulation</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body class="light-page">
+
+    {% include "navbar.html" %}
+
+    <div class="mall-container text-center">
+
+        <!-- TITLE -->
+        <h3 class="page-title mb-4">
+            <i class="bi bi-cpu-fill me-2"></i>
+            AI Revenue Simulation
+        </h3>
+
+        <!-- CENTER BUTTONS -->
+        <div class="d-flex flex-column align-items-center gap-4 mt-4">
+
+            <!-- ALL SIMULATION -->
+            <a href="/all-simulation" class="btn btn-success sim-btn shadow">
+                All over mall simulation
+            </a>
+
+            <!-- BRAND SIMULATION -->
+            <a href="/brand-simulation" class="btn btn-outline-success sim-btn shadow-sm">
+                Brand simulation
+            </a>
+
+            <!-- SHORT SUMMARY -->
+            <a href="/short-summary" class="btn btn-success sim-btn shadow-sm opacity-75">
+                Short summary
+            </a>
+
+        </div>
+
+        <!-- REPORT BUTTON (BOTTOM RIGHT FLOATING) -->
+        <div class="sim-report-wrapper">
+            <a href="#" class="btn btn-success report-btn">
+                <i class="bi bi-file-earmark-text me-1"></i> Report
+            </a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
