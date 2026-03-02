@@ -242,3 +242,34 @@ body.light-page {
         font-size: 18px;
     }
 }
+
+/* =====================
+   REPORT PAGE
+   ===================== */
+
+.insight-panel {
+    height: 80vh;
+    overflow-y: auto;
+}
+
+/* Bigger chart */
+.chart-container {
+    width: 70%;
+    max-width: 600px;
+    height: 420px;
+}
+
+/* Active question highlight */
+.list-group-item.active {
+    background-color: #22c55e;
+    border-color: #16a34a;
+    color: white;
+}
+
+.chart-wrapper {
+    width: 90%;
+    max-width: 800px;
+    height: 520px;
+    /* BIGGER PIE */
+    margin: auto;
+}
