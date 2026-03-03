@@ -443,12 +443,12 @@ def insight(qid):
             "value": best
         }
 
-    # ---------------- 1️⃣1️⃣ NIKE DAILY PROFIT (PIE) ----------------
-    if qid == "nike_profit_day":
+    # ---------------- 1️⃣1️⃣ CAMPUS DAILY PROFIT (PIE) ----------------
+    if qid == "campus_profit_day":
         day_profit = {}
 
         for d in data:
-            if str(d.get("Company")).upper() == "NIKE":
+            if str(d.get("Company")).upper() == "CAMPUS":
                 day = str(d.get("Date", "Unknown")).split(" ")[0]
                 try:
                     val = float(d.get("Profit (USD)", 0))
